@@ -34,7 +34,7 @@ export const ContactView = () => {
                     <input type='text' placeholder='Message' className='border-b border-pink-300 p-2 outline-none'/>
                 </div>
             </div>
-             <button className="py-3 px-10 mx-56 mt-10 bg-[#E0c013] text-white rounded-full font-light hover:bg-black transition duration-100">
+             <button className="py-3 px-10 mx-56 mt-10 bg-secondary text-white rounded-full font-light hover:bg-black transition duration-100">
                 Sent Message
                 </button>
         </form>
