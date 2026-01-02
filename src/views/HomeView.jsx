@@ -45,9 +45,9 @@ export default function HomeView() {
       <section className="New-collection w-full h-fit px-16  flex flex-col justify-start items-center py-8 gap-6">
         <h1 className="text-5xl font-bold">New Collection</h1>
         <div className="item-container w-full flex justify-center gap-4">
-          <CollectionCard className="md:h-100" />
-          <CollectionCard className="md:h-100" />
-          <CollectionCard className="md:h-100" />
+          <CollectionCard className="md:h-100" id={1}/>
+          <CollectionCard className="md:h-100" id={2}/>
+          <CollectionCard className="md:h-100" id={3}/>
         </div>
       </section>
       <section className="Collection h-full flex flex-col items-center p-12">

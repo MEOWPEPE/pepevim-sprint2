@@ -4,10 +4,10 @@ const Footer = () => {
   return (
     <footer className="h-63 bg-primary flex flex-col justify-end">
       <div className="h-full w-full md:flex items-start p-6">
-        <img src="icon.png" alt="icon" className="h-8 mr-4 hidden md:inline" />
-        <div class="w-90 md:h-full flex flex-col items-start">
+        <img src="/icon.png" alt="icon" className="h-8 mr-4 hidden md:inline" />
+        <div className="w-90 md:h-full flex flex-col items-start">
           <img
-            src="logo-m.png"
+            src="/logo-m.png"
             alt="icon"
             className="w-auto h-8 object-contain shrink-0"
           />
@@ -23,7 +23,7 @@ const Footer = () => {
             <li>HOME</li>
             <li>COLLECTION</li>
             <li>ABOUT US</li>
-            <li >CONTACT</li>
+            <li>CONTACT</li>
           </ul>
         </div>
       </div>

@@ -11,12 +11,12 @@ export default function CollectionView() {
         </h2>
         <div className="collection-bento w-8/10 md:w-fit grid md:grid-cols-3 gap-8 pt-8">
         {/* เอาไว้loop คอลเล็คชั่นทั้งหมด */}
-          <CollectionCard className={"aspect-square"} />
-          <CollectionCard className={"aspect-square"} />
-          <CollectionCard className={"aspect-square"} />
-          <CollectionCard className={"aspect-square"} />
-          <CollectionCard className={"aspect-square"} />
-          <CollectionCard className={"aspect-square"} />
+          <CollectionCard className={"aspect-square"} id={1} />
+          <CollectionCard className={"aspect-square"} id={2}/>
+          <CollectionCard className={"aspect-square"} id={3}/>
+          <CollectionCard className={"aspect-square"} id={4}/>
+          <CollectionCard className={"aspect-square"} id={5}/>
+          <CollectionCard className={"aspect-square"} id={6}/>
         </div>
       </section>
       <Footer />

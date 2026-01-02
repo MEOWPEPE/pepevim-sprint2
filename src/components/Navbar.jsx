@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <nav className="w-full h-18 bg-primary flex justify-start items-center text-center py-5 px-12 gap-4 text-(--text-primary)  shadow-lg">
       <div className="logoContainer h-full">
-        <img src="logo-m.png" alt="logo" className="h-full" />
+        <img src="/logo-m.png" alt="logo" className="h-full" />
       </div>
       <ul className=" mx-auto hidden md:flex">
         <li>
