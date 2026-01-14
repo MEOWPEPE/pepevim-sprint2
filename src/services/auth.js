@@ -39,3 +39,33 @@ export const register = async ({
     };
   }
 };
+
+export const login = async ({ email, password }) => {
+  try {
+    const payload = { email, password };
+    console.log("🚀 ~ login ~ payload:", payload);
+
+    const res = await axios.post(`${API_URL}/api/auth/login`, payload, {
+      withCredentials: true,
+    });
+
+    return {
+      success: true,
+      message: res.data.message,
+    };
+  } catch (error) {
+    if (error.response) {
+      return {
+        success: false,
+        message: error.response.data.message,
+      };
+    }
+
+    return {
+      success: false,
+      message: "Network error",
+    };
+  }
+};
+
+

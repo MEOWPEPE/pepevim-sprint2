@@ -3,8 +3,11 @@ import { FcGoogle } from "react-icons/fc";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Dog from "../assets/img/dog.png";
+import { login } from "../services/auth";
+import { useNavigate } from "react-router";
 
 function LoginView() {
+  const navigate = useNavigate();
   const [value, setValue] = useState({
     email: "",
     password: "",
@@ -28,18 +31,26 @@ function LoginView() {
     setErrors({ password: "", form: "" });
   };
 
-  const hdlSubmit = (e) => {
+  const hdlSubmit = async (e) => {
     e.preventDefault();
 
     if (value.password.length < 8 || value.password.length > 64) {
       setErrors({
         password: "Password must be 8-64 characters",
-        form: "",
       });
       return;
     }
 
-    console.log("payload:", value);
+    //TO DO call Api
+    const result = await login(value);
+
+    if (!result.success) {
+      setErrors({
+        form: "อีเมลหรือรหัสผ่านไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง",
+      });
+      return;
+    }
+    navigate("/");
   };
 
   return (

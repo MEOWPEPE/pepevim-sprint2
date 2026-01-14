@@ -60,6 +60,7 @@ export const SingupView = () => {
       return;
     }
 
+    console.log("🚀 ~ hdlSubmit ~ formData:", formData);
     // 2️⃣ call service
     const result = await register(formData);
 
@@ -171,7 +172,8 @@ export const SingupView = () => {
             <button
               type="button"
               onClick={() => setShowConfirmPassword((p) => !p)}
-              className="absolute right-0 top-6 p-2"
+              className="absolute right-0 top-6 p-2
+              hover:cursor-pointer"
             >
               {showConfirmPassword ? <FaRegEye /> : <FaRegEyeSlash />}
             </button>
