@@ -80,7 +80,17 @@ export default function Navbar() {
       >
         <FaCartShopping className="w-full h-full" />
       </NavLink>
-          <CartIcon/>
+      <NavLink
+        to="/carttest"
+        end
+        className={({ isActive }) =>
+          " h-full aspect-square text-white p-1" +
+          (isActive ? " navlinkActive" : "")
+        }
+        
+      >
+        <CartIcon/>
+      </NavLink>
     </nav>
   );
 }
