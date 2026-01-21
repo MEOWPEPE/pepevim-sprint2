@@ -4,15 +4,15 @@ const CartContext = createContext();
 const CART_KEY = "cart";
 
 export function CartProvider({ children }) {
-  const [cart, setCart] = useState([]);
-
-  useEffect(() => {
-    const stored = localStorage.getItem(CART_KEY);
-    if (stored) {
-      setCart(JSON.parse(stored));
+    const [cart, setCart] = useState(() => {
+    try {
+      const stored = localStorage.getItem(CART_KEY);
+      return stored ? JSON.parse(stored) : [];
+    } catch (err) {
+      console.error("Failed to parse cart", err);
+      return [];
     }
-  }, []);
-
+  });
 
   useEffect(() => {
     localStorage.setItem(CART_KEY, JSON.stringify(cart));
@@ -35,7 +35,7 @@ export function CartProvider({ children }) {
   };
 
   const removeFromCart = (id) => {
-    setCart((prev) => prev.filter((item) => item.id !== id));
+    setCart((prev) => prev.filter((item) => item._id !== id));
   };
 
   const updateQuantity = (id, qty) => {
