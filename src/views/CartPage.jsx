@@ -32,24 +32,24 @@ export default function CartPage() {
                   <p>{item.price} บาท</p>
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => updateQuantity(item._id, item.quantity - 1)}
-                  >
-                    -
-                  </button>
-                  <span>{item.quantity}</span>
-                  <button
-                    onClick={() => updateQuantity(item._id, item.quantity + 1)}
-                  >
-                    +
-                  </button>
-                  <button
-                    onClick={() => removeFromCart(item._id)}
-                    className="text-red-500"
-                  >
-                    ลบ
-                  </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => updateQuantity(item._id, item.size, item.quantity - 1)}
+                >
+                  -
+                </button>
+                <span>{item.quantity}</span>
+                <button
+                  onClick={() => updateQuantity(item._id, item.size, item.quantity + 1)}
+                >
+                  +
+                </button>
+                <button
+                  onClick={() => removeFromCart(item._id,item.size)}
+                  className="text-red-500"
+                >
+                  ลบ
+                </button>
                 </div>
               </div>
             ))}

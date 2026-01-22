@@ -14,12 +14,11 @@ import CollectionView from "./views/Collection/CollectionView.jsx";
 import ProductView from "./views/Collection/ProductView.jsx";
 import ProductDetailView from "./views/Collection/ProductDetailView.jsx";
 import ConfirmOrderView from "./views/ConfirmOrderView.jsx";
-import DashBoardView from "./views/DashBoardView.jsx";
-import Testpang from "./views/Testpang.jsx";
+import DashBoardView2 from "./views/DashBoardView2.jsx";
 import CartPage from "./views/CartPage.jsx";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
-import ProtectRoute from "./components/ProtectRoute.jsx";
 import GuestRoute from "./components/GuestRoute.jsx";
+import ProfilePage from "./views/ProfilePage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +38,7 @@ const router = createBrowserRouter([
           { path: "collection", element: <CollectionView /> },
           { path: "collection/:id", element: <ProductView /> },
           { path: "products/:id", element: <ProductDetailView /> },
-          { path: "dashboard", element: <DashBoardView /> },
+          { path: "dashboard", element: <DashBoardView2 /> },
           { path: "about", element: <AboutUsView /> },
           { path: "contact", element: <ContactView /> },
           {
@@ -60,17 +59,9 @@ const router = createBrowserRouter([
           },
           { path: "payment", element: <PaymentView /> },
           { path: "order", element: <ConfirmOrderView /> },
-          { path: "dashboard", element: <DashBoardView /> },
           { path: "checkout", element: <ConfirmOrderView /> },
-          { path: "carttest", element: <CartPage /> },
-          {
-            path: "pang-test",
-            element: (
-              <ProtectRoute>
-                <Testpang />
-              </ProtectRoute>
-            ),
-          },
+          { path: "profile", element: <ProfilePage /> },
+          { path: "cart", element: <CartPage /> },
         ],
       },
     ],

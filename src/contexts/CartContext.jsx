@@ -20,30 +20,30 @@ export function CartProvider({ children }) {
 
   const addToCart = (product) => {
     setCart((prev) => {
-      const exist = prev.find((item) => item._id === product._id);
+      const exist = prev.find((item) => item._id === product._id && item.size===product.size);
       console.log(product)
       if (exist) {
         return prev.map((item) =>
-          item._id === product._id
-            ? { ...item, quantity: item.quantity + 1 }
+          item._id === product._id && item.size === product.size
+            ? { ...item, quantity: item.quantity + product.quantity }
             : item
         );
       }
 
-      return [...prev, { ...product, quantity: 1 }];
+      return [...prev,product];
     });
   };
 
-  const removeFromCart = (id) => {
-    setCart((prev) => prev.filter((item) => item._id !== id));
+  const removeFromCart = (id,size) => {
+    setCart((prev) => prev.filter((item) => !(item._id == id && item.size == size)));
   };
 
-  const updateQuantity = (id, qty) => {
-    if (qty <= 0) return removeFromCart(id);
+  const updateQuantity = (id, size,qty) => {
+    if (qty <= 0) return removeFromCart(id,size);
 
     setCart((prev) =>
       prev.map((item) =>
-        item._id === id ? { ...item, quantity: qty } : item
+        item._id === id && item.size === size ? { ...item, quantity: qty } : item
       )
     );
   };

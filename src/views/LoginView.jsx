@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FcGoogle } from "react-icons/fc";
+// import { FcGoogle } from "react-icons/fc";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Dog from "../assets/img/dog.png";
@@ -79,7 +79,7 @@ function LoginView() {
         {/* LOGIN FORM */}
         <form
           noValidate
-          autoComplete="on"
+          autoComplete="off"
           onSubmit={hdlSubmit}
           className="flex flex-col pt-6 w-2/3 gap-3"
         >
@@ -90,7 +90,6 @@ function LoginView() {
               type="email"
               name="email"
               placeholder="Enter email"
-              autoComplete="username"
               maxLength={254}
               value={value.email}
               onChange={hdlChange}
@@ -107,7 +106,6 @@ function LoginView() {
               type={showPassword ? "text" : "password"}
               name="password"
               placeholder="Enter password"
-              autoComplete="current-password"
               minLength={8}
               maxLength={64}
               value={value.password}
@@ -150,14 +148,14 @@ function LoginView() {
             >
               Login
             </button>
-
+            {/* 
             <button
               type="button"
               className="flex items-center justify-center gap-2 bg-[#E8E8E8] rounded-full py-2 hover:opacity-70 hover:cursor-pointer"
             >
               <FcGoogle size={20} />
               <span>Login with Google</span>
-            </button>
+            </button> */}
           </div>
         </form>
 
